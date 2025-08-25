@@ -4,18 +4,26 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev-custom": "node server.js",
+    "dev-next": "next dev --turbopack",
+    "dev-with-hotreload": "concurrently \"next dev --turbopack --port 3001\" \"node server.js\"",
+    "dev-hot": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
+    "start-next": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "15.4.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.4.2"
+    "socket.io": "^4.7.4",
+    "socket.io-client": "^4.7.4"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "concurrently": "^9.2.0",
     "eslint": "^9",
-    "eslint-config-next": "15.4.2",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-next": "15.4.2"
   }
 }
